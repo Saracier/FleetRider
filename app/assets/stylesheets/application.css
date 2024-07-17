@@ -17,3 +17,19 @@
     right: 0;
     left: auto;
 }
+
+.flash {
+    padding: 10px;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000;
+    border-radius: 5px;
+}
+
+.flash.alert {
+    background-color: rgba(255, 0, 0, 0.58);
+}
+.flash.notice {
+    background-color: rgba(0, 255, 0, 0.58);
+}
