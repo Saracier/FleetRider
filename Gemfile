@@ -46,6 +46,8 @@ gem "bootsnap", require: false
 
 gem 'devise'
 gem 'toastr-rails'
+gem 'dotenv-rails'
+gem 'pg'
 
 
 group :development, :test do

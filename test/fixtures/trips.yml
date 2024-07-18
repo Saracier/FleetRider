@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  from: MyString
+  to: MyString
+  pitstop: MyString
+  distance: 1
+  date_beginning: 2024-07-18
+  date_end: 2024-07-18
+  user: one
+  car: one
+
+two:
+  from: MyString
+  to: MyString
+  pitstop: MyString
+  distance: 1
+  date_beginning: 2024-07-18
+  date_end: 2024-07-18
+  user: two
+  car: two
