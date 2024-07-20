@@ -25,6 +25,7 @@
     left: 20px;
     z-index: 1000;
     border-radius: 5px;
+    width: 250px;
 }
 
 .flash.alert {
