@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid border-bottom border-primary">
-    <a class="navbar-brand" href="#">FleetRider</a>
+    <a class="navbar-brand" href="/<%# root_url %>">FleetRider</a>
     <div class="d-flex">
-      <a class="nav-link" href="<%# root_path %>">Login</a>
+      <a class="nav-link" href="#">Login</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -13,9 +13,9 @@
               Menu
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Show trips</a></li>
-              <li><a class="dropdown-item" href="#">Add trip</a></li>
-              <li><a class="dropdown-item" href="#">Add car</a></li>
+              <li>
+              <%= link_to 'Trips', trips_path, class: 'btn btn-m' %>
+              </li>
             </ul>
           </li>
         </ul>

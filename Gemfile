@@ -48,7 +48,8 @@ gem 'devise'
 gem 'toastr-rails'
 gem 'dotenv-rails'
 gem 'pg'
-
+gem 'rails-ujs'
+gem 'pundit'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

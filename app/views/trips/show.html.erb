@@ -1,0 +1,19 @@
+<div class="container mt-3">
+  <h1>Details of the trip</h1>
+  <div class="card">
+    <div class="card-body">
+      <p><strong>Car:</strong> <%= "#{@trip.car.brand} #{@trip.car.model}" %></p>
+      <p><strong>From:</strong> <%= @trip.from %></p>
+      <p><strong>To:</strong> <%= @trip.to %></p>
+      <p><strong>Pitstop:</strong> <%= @trip.pitstop %></p>
+      <p><strong>Distance:</strong> <%= @trip.distance %> km</p>
+      <p><strong>Date Beginning:</strong> <%= @trip.date_beginning.strftime("%d-%m-%Y") %></p>
+      <p><strong>Date End:</strong> <%= @trip.date_end.strftime("%d-%m-%Y") %></p>
+      <p><strong>Fuel Used:</strong> <%= @trip.distance*@trip.car.fuel_consumption/100 %> liters</p>
+      <p><strong>Traveller:</strong> <%= @trip.user_id %></p>
+      <p><strong>Created At:</strong> <%= @trip.created_at.strftime("%d-%m-%Y %H:%M") %></p>
+    </div>
+  </div>
+
+  <%= link_to 'Back', trips_path, class: "btn btn-primary mt-3" %>
+</div>
