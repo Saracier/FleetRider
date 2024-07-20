@@ -2,11 +2,13 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 
-document.addEventListener("DOMContentLoaded", function() {
+function deleteFlashMessages() {
     const flashMessages = document.querySelectorAll('.flash');
     flashMessages.forEach(function(flash) {
         setTimeout(function() {
             flash.style.display = 'none';
         }, 3000);
     });
-});
+}
+
+setInterval(deleteFlashMessages, 1000)

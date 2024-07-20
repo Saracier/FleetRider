@@ -30,6 +30,7 @@ class TripsController < ApplicationController
         redirect_to trip_path(@trip)
       else
         flash[:alert] = @trip.errors.full_messages.join(",")
+        # render :new
         redirect_to edit_trip_path(@trip)
       end
   end
@@ -40,9 +41,10 @@ class TripsController < ApplicationController
       flash[:notice] = 'Trip created successfully'
       redirect_to trip_path(@trip)
     else
+      # flash.now[:notice] = @trip.errors.full_messages.join(", ")
       flash[:alert] = @trip.errors.full_messages.join(",")
-      render :new
-      # redirect_to new_trip_path(@trip)
+      # render :new
+      redirect_to new_trip_path(@trip)
     end
   end
 
