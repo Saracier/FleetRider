@@ -29,9 +29,10 @@ class TripsController < ApplicationController
         flash[:notice] = 'Trip updated successfully'
         redirect_to trip_path(@trip)
       else
-        flash[:alert] = @trip.errors.full_messages.join(",")
-        # render :new
-        redirect_to edit_trip_path(@trip)
+        respond_to do |format|
+          format.html { render :new, status: :unprocessable_entity }
+          format.turbo_stream {render turbo_stream: turbo_stream.replace('trips_feedback', partial: 'trips_feedback', locals: { trip: @trip })}
+        end
       end
   end
 
@@ -41,10 +42,10 @@ class TripsController < ApplicationController
       flash[:notice] = 'Trip created successfully'
       redirect_to trip_path(@trip)
     else
-      # flash.now[:notice] = @trip.errors.full_messages.join(", ")
-      flash[:alert] = @trip.errors.full_messages.join(",")
-      # render :new
-      redirect_to new_trip_path(@trip)
+      respond_to do |format|
+        format.html { render :new, status: :unprocessable_entity }
+        format.turbo_stream {render turbo_stream: turbo_stream.replace('trips_feedback', partial: 'trips_feedback', locals: { trip: @trip })}
+      end
     end
   end
 

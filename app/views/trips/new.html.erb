@@ -1,5 +1,9 @@
 <%= form_for @trip, html: { class: "form-horizontal container mt-5" }, data: { turbo_frame: :_top } do |form|%>
 
+  <%= turbo_frame_tag "trips_feedback" do %>
+    <%= render "trips_feedback" %>
+  <% end %>
+
   <div class="form-group">
     <%= form.label :car_id, class: "control-label" %>
     <%= form.select :car_id, Car.all.map { |car| [car.brand + ' ' + car.model, car.id] }, {}, { class: "form-control" } %>
