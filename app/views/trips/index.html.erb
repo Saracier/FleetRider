@@ -1,0 +1,35 @@
+<div class="container mt-5">
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Car</th>
+      <th>From</th>
+      <th>To</th>
+      <th>Pitstop</th>
+      <th>Distance</th>
+      <th>Date Beginning</th>
+      <th>Traveller</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @trips.each do |trip| %>
+      <tr>
+        <td><%= "#{trip.car.brand} #{trip.car.model}" %></td>
+        <td><%= trip.from %></td>
+        <td><%= trip.to %></td>
+        <td><%= trip.pitstop %></td>
+        <td><%= trip.distance %></td>
+        <td><%= trip.date_beginning.strftime("%Y-%m-%d") %></td>
+        <td><%= "#{trip.user.first_name} #{trip.user.last_name}" %></td>
+        <td>
+          <%= link_to 'Edit', edit_trip_path(trip.id), class: 'btn btn-primary btn-sm' %>
+          <%= link_to 'Delete', trip_path(trip.id), data: { turbo_confirm: 'Are you sure?', turbo_method: :delete}, class: 'btn btn-danger btn-sm' %>
+          <%= link_to 'Details', trip_path(trip.id), class: 'btn btn-info btn-sm' %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<%= link_to 'Add Trip', new_trip_path, class: 'btn btn-info btn-sm' %>
+</div>
