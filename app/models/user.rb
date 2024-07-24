@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :trips
+  has_many :trips, dependent: :destroy
 
   enum role: { normal: 0, boss: 1, admin: 2 }
 end
