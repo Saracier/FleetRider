@@ -1,6 +1,6 @@
 class CarsController < ApplicationController
 
-  before_action :find_car, only: [:destroy, :edit, :update]
+  before_action :find_car, only: [:show, :destroy, :edit, :update]
 
   def index
     @pagy, @cars = pagy(Car.all)
@@ -13,6 +13,9 @@ class CarsController < ApplicationController
       flash[:notice] = @car.errors.full_messages.join(", ")
     end
     redirect_to cars_path
+  end
+
+  def show
   end
 
   def edit

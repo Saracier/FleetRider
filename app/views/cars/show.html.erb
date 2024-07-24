@@ -1,0 +1,15 @@
+<div class="container mt-3">
+  <h1>Details of the car</h1>
+  <div class="card">
+    <div class="card-body">
+      <p><strong>Brand:</strong> <%= @car.brand %></p>
+      <p><strong>Model:</strong> <%= @car.model %></p>
+      <p><strong>run:</strong> <%= @car.run %></p>
+      <p><strong>Fuel consumption:</strong> <%= @car.fuel_consumption %></p>
+      <p><strong>Created At:</strong> <%= @car.created_at.strftime("%d-%m-%Y %H:%M") %></p>
+      <p><strong>picture:</strong> <%= @car.picture %></p>
+    </div>
+  </div>
+
+  <%= link_to 'Back', cars_path, class: "btn btn-primary mt-3" %>
+</div>
