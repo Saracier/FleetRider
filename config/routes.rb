@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   # root "posts#index"
   root "home#index"
   resources :trips
+  resources :cars
 end

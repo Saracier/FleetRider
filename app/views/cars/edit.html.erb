@@ -1,0 +1,36 @@
+<%= form_for @car, html: { class: "form-horizontal container mt-5" }, data: { turbo_frame: :_top } do |form|%>
+
+  <%= turbo_frame_tag "cars_feedback" do %>
+    <%= render "cars_feedback" %>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :brand, class: "control-label" %>
+    <%= form.text_field :brand, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :model, class: "control-label" %>
+    <%= form.text_field :model, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :picture, class: "control-label" %>
+    <%= form.text_field :picture, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :run, class: "control-label" %>
+    <%= form.number_field :run, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :fuel_consumption, class: "control-label" %>
+    <%= form.number_field :fuel_consumption, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.submit "Save", class: "btn btn-primary" %>
+  </div>
+<% end %>
+<%= link_to 'Back', cars_path, class: "btn btn-primary mt-3 m-2" %>
