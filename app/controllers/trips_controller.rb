@@ -2,7 +2,7 @@ class TripsController < ApplicationController
 
   before_action :find_trip, only: [:show, :destroy, :edit, :update]
   def index
-    @trips = Trip.all
+    @pagy, @trips = pagy(Trip.all)
   end
 
   def show
