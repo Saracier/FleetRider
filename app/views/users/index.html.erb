@@ -1,0 +1,29 @@
+<div class="container mt-5">
+  <%== pagy_nav @pagy %>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Role</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.first_name %></td>
+        <td><%= user.last_name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.role %></td>
+        <td>
+          <%= link_to 'Edit', edit_user_path(user.id), class: 'btn btn-primary btn-sm' %>
+          <%= link_to 'Delete', user_path(user.id), data: { turbo_confirm: 'Are you sure?', turbo_method: :delete}, class: 'btn btn-danger btn-sm' %>
+          <%= link_to 'Details', user_path(user.id), class: 'btn btn-info btn-sm' %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  <%= link_to 'Add User', new_user_path, class: 'btn btn-info btn-sm' %>
+</div>

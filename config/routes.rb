@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   root "home#index"
   resources :trips
   resources :cars
+  resources :users
 end
